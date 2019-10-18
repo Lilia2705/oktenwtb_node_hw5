@@ -1,9 +1,11 @@
 const isUserPresentMiddleware = require('./isUserPresentMiddleware');
 const checkUserValidMiddleware = require ('./checkUserValidMiddleware');
-const checkUserIsInDb = require('./checkUserIsInDb');
+const checkAccessTokenMiddleware = require('./checkAccessTokenMiddleware');
+const getUserAuthMiddleware = require('./getUserAuthMiddleware');
 
 module.exports = {
     isUserPresentMiddleware,
     checkUserValidMiddleware,
-    checkUserIsInDb,
+    checkAccessTokenMiddleware,
+    getUserAuthMiddleware
 }

@@ -1,11 +1,10 @@
-const dataBase = require ('../../dataBase').getInstance();
+const {usersService} = require('../../service')
 
 module.exports = async (req, res) => {
     try {
         const userToCreate = req.body;
-        const usersModel = dataBase.getModel('User');
 
-        await usersModel.create(userToCreate);
+        await usersService.create(userToCreate);
 
         res.redirect('users')
     }
