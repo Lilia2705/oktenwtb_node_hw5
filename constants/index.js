@@ -1,0 +1,1 @@
+module.exports.PHOTOS_CHECK = require('./photosCheck');
