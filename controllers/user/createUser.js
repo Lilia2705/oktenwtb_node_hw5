@@ -4,7 +4,7 @@ module.exports = async (req, res) => {
     try {
         const userToCreate = req.body;
 
-        await usersService.create(userToCreate);
+        const {id: user_id} =  await usersService.create(userToCreate);
 
         res.redirect('users')
     }
