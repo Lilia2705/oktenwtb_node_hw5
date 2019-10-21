@@ -9,22 +9,14 @@ const app = express();
 
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
-
 app.use(express.static(path.join(__dirname, 'static')));
 
-
-app.engine('.hbs', exprHb({
-    defaultLayout: null,
-    extname: '.hbs'
-}));
 
 app.set('view engine', '.hbs');
 app.set('views', path.join(__dirname, 'static'));
 
-let {getUsersPages, getHousesPages} = require('./getPages');
-let {user} = require('./controllers');
-let {userMiddleware} = require('./middleware');
-let {userRouter, houseRouter, authRouter} = require('./router');
+const {getUsersPages, getHousesPages} = require('./getPages');
+const {userRouter, houseRouter, authRouter} = require('./router');
 
 app.get ('/', getUsersPages.getMainPage);
 app.get ('/register', getUsersPages.getRegisterPage);
