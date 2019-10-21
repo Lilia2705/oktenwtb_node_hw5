@@ -5,7 +5,6 @@ module.exports = async (req, res, next) => {
         const {house_id} = req.params;
         const isHousePresent = await housesService(house_id);
 
-
         req.house = isHousePresent.dataValues;
 
         next();
